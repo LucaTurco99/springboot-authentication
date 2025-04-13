@@ -1,11 +1,20 @@
 spring:
   application:
-    name: AuthenticationKeycloak
+    name: AuthenticationGitHub
   security:
     oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: http://localhost:8080/realms/Develop
+      client:
+        registration:
+          github:
+            client-id: Ov23liqq7RMhOPMgFFdR
+            client-secret: 2a1c1e2b7cd89bc72857de16254287a16fbe6166
+            scope:
+              - read:user
+              - user:email
+            authorization-grant-type: authorization_code
+            #redirect-uri: "http://localhost:8090/login/oauth2/code/github"
+            client-name: GitHub
+
 
 server:
   servlet:
