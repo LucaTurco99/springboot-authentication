@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: AuthenticationKeycloak
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/Develop
+
+server:
+  servlet:
+    context-path: /api
+  port: 8090
